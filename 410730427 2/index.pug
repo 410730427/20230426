@@ -1,0 +1,42 @@
+html
+  head
+    link(rel='stylesheet' href='week7_1.css')
+    // Swiper CSS顯示格式
+    link(rel='stylesheet' href='https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css')
+  body
+    // Swiper
+    #app
+      .swiper.carousel
+        .swiper-wrapper
+          figure.swiper-slide(v-for='(card,id) in cards')
+            .box
+              .top
+                h2.name
+                  | {{card.title}} 
+                  span.smalltext 作者：黃品昕
+                .tag
+                  .cirbutton  
+              .bottom
+                ul
+                  li
+                    h3 姓名：
+                    |  {{card.address}}
+                  li
+                    h3 學校系級： 
+                    |  {{card.name}}
+                  li
+                    h3 學號： 
+                    |  {{card.tel}}
+                  li
+                    h3 作品介紹： 
+                    |  {{card.opentime}}
+              
+                  
+        button.swiper-button-next(type='button')
+        button.swiper-button-prev(type='button')
+        .swiper-pagination
+    // Swiper JS
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/vue/2.7.8/vue.min.js')
+    script(src='https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js')
+    script(src='week7.js')
+    // Initialize Swiper
